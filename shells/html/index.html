@@ -84,8 +84,8 @@
                 <p class="mb-0">This website uses cookies to ensure you get the best experience.</p>
               </div>
               <div>
-                <button id="declineCookies" class="btn btn-secondary btn-sm me-2" style="width: 80px;">Decline</button>
-                <button id="acceptCookies" class="btn btn-secondary btn-sm" style="width: 80px;">Accept</button>
+                <button id="declineCookies" class="btn btn-secondary btn-sm me-2" style="width: 80px">Decline</button>
+                <button id="acceptCookies" class="btn btn-secondary btn-sm" style="width: 80px">Accept</button>
               </div>
             </div>
           </div>
@@ -98,11 +98,11 @@
       function loadGoogleAnalytics() {
         console.log("Loading Google Analytics...");
         // Create and add the Google Analytics script
-        var gaScript = document.createElement('script');
+        var gaScript = document.createElement("script");
         gaScript.async = true;
         gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-XFK3G7MCCN";
         document.head.appendChild(gaScript);
-        
+
         // Initialize Google Analytics
         window.dataLayer = window.dataLayer || [];
         function gtag() {
@@ -112,7 +112,7 @@
         gtag("config", "G-XFK3G7MCCN");
         console.log("Google Analytics loaded");
       }
-      
+
       // Check cookie consent status on page load
       document.addEventListener("DOMContentLoaded", function () {
         console.log("Page loaded, checking cookie consent status");
@@ -123,12 +123,12 @@
         } else {
           console.log("No previous consent or declined, not loading analytics");
         }
-        
+
         // If no decision has been made yet, show the consent banner
         if (!localStorage.getItem("cookieConsent") && !localStorage.getItem("cookieDeclined")) {
           document.getElementById("cookieConsent").style.display = "block";
         }
-        
+
         // Handle accept button click
         document.getElementById("acceptCookies").addEventListener("click", function () {
           console.log("Accept button clicked");
@@ -136,7 +136,7 @@
           document.getElementById("cookieConsent").style.display = "none";
           loadGoogleAnalytics(); // Load analytics after consent
         });
-        
+
         // Handle decline button click
         document.getElementById("declineCookies").addEventListener("click", function () {
           console.log("Decline button clicked");
