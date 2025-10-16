@@ -1,0 +1,16 @@
+# efalgo.com
+xdg-open https://efalgo.com
+
+# Usage
+xdg-open https://pbizopoulos.github.io/README.txt
+
+# Extra commands
+# Goto https://ap.www.namecheap.com/Domains/DomainControlPanel/efalgo.com/advancedns
+# Create A records that point efalgo.com to:
+# 185.199.108.153
+# 185.199.109.153
+# 185.199.110.153
+# 185.199.111.153
+xdg-open https://github.com/efalgo/efalgo.com/settings/pages
+# In 'Build and deployment', Source choose GitHub Actions.
+# Add efalgo.com in 'Custom domain'
