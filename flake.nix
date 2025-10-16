@@ -7,6 +7,6 @@
     inputs:
     inputs.canonicalization.blueprint { inherit inputs; }
     // {
-      formatter.x86_64-linux = inputs.canonicalization.formatter.x86_64-linux;
+      inherit (inputs.canonicalization) formatter;
     };
 }
