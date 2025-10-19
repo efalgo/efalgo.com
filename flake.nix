@@ -1,12 +1,19 @@
 {
   inputs = {
-    canonicalization.url = "github:pbizopoulos/canonicalization";
-    nixpkgs.follows = "canonicalization/nixpkgs";
+    blueprint = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:numtide/blueprint";
+    };
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    treefmt-nix = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:numtide/treefmt-nix";
+    };
   };
   outputs =
     inputs:
-    inputs.canonicalization.blueprint { inherit inputs; }
+    inputs.blueprint { inherit inputs; }
     // {
-      inherit (inputs.canonicalization) formatter;
+      inherit (inputs) nixpkgs blueprint;
     };
 }
