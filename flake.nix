@@ -10,10 +10,5 @@
       url = "github:numtide/treefmt-nix";
     };
   };
-  outputs =
-    inputs:
-    inputs.blueprint { inherit inputs; }
-    // {
-      inherit (inputs) nixpkgs blueprint;
-    };
+  outputs = inputs: inputs.blueprint { inherit inputs; };
 }
